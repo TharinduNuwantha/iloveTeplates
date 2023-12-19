@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+.info-msg {
+  color: #059;
+  background-color: #BEF;
+}
+.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background: #bc4e9c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+padding: 0 0 0 25px;
+display: flex;
+justify-content: space-between;
+}
+nav .links{
+    padding: 20px;
+}
+nav .links ul{
+    display: flex;
+    list-style: none;
+}
+nav .links ul li{
+    padding: 0 10px;
+}
+nav .links ul li a{
+    text-decoration: none;
+    font-size: 13px;
+    color: #DFF2BF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.2s ease-in-out;
+}
+nav .links ul li a:hover{
+    color: #059;
+}
+nav p{
+    font-size: 25px;
+    font-family: 'Dhurjati', sans-serif;
+    color: rgb(255, 255, 255);
+    
+}
+.wapper{
+    width: 100%;
+    height: 100%;
+    background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table{
+    background-color: aliceblue;
+    width: 80%;
+    margin-top: 15px;
+}
+.table table{
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.table table tr th{
+    background-color: #f80759;
+    padding: 10px;
+    font-weight: bold;
+    color: aliceblue;
+}
+.table table tr td{
+    background-color: rgb(222, 228, 232);
+    border: 1px soild black;
+}
+.table table tr,.table table td{
+    text-align: center;
+    
+}
+.table table .imgCanves img{
+    width: 70px;
+}
+.table table tr td{
+
+}
+img.thmlForLst{
+    width: 150px;
+}
+#editBtn{
+    padding: 5px 10px;
+    background-color: rgb(3, 54, 10);
+    color: aliceblue;
+    border: none;
+}
+#deleteBtn{
+    padding: 5px 10px;
+    background-color: rgb(253, 30, 90);
+    color: aliceblue; 
+    border: none;
+}
+.searchbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.searchbar input{
+    width: 95%;
+    height: 30px;
+}
+.listSearch{
+    padding: 9px 20px;
+    border: none;
+    background-color: #f80759;
+    color: aliceblue;
+    margin: 0 0 0 5px;
+}
