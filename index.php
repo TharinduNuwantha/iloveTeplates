@@ -96,7 +96,7 @@
             <div class="body-contaner">
                 <div class="statusBar">
                     <div class="bollCover">
-                        <a href="#">
+                        <a href="searchResult.php?category=Travel"  target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/traveling.png" class="ball1" alt="">
@@ -106,7 +106,7 @@
                         </a>
 
                         
-                        <a href="#">
+                        <a href="searchResult.php?category=Better Life"  target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/beterLife.png" class="betterLife" alt="">
@@ -115,7 +115,7 @@
                         </div>
                         </a>
 
-                        <a href="#" class="">        
+                        <a href="searchResult.php?category=Wedding"  target="_blank">        
                          <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/vedding.png" class="ultraRelax" alt="">
@@ -125,7 +125,7 @@
                          </a>
 
 
-                        <a href="#">
+                        <a href="searchResult.php?category=Photo Collage"  target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/photoClg.png" class="photocollage" alt="">
@@ -134,7 +134,7 @@
                         </div>
                         </a>
 
-                        <a href="#">
+                        <a href="searchResult.php?category=Add Text"  target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/yourText.png" class="ultraRelax" alt="">
@@ -144,7 +144,7 @@
                         </a>
 
 
-                        <a href="#">            
+                        <a href="searchResult.php?category=Toon me"  target="_blank">            
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/toon.png" class="ultraRelax" alt="">
@@ -153,7 +153,7 @@
                         </div>
                         </a>
 
-                        <a href="#">        
+                        <a href="searchResult.php?category=Love you"  target="_blank">        
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/lovelove.png" class="ultraRelax" alt="">
@@ -162,7 +162,7 @@
                         </div>   
                         </a>
 
-                        <a href="#" class="">
+                        <a href="searchResult.php?category=Beauty"   target="_blank">
                          <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/buty1.png" class="ultraRelax" alt="">
@@ -171,7 +171,7 @@
                         </div> 
                          </a>
 
-                         <a href="#" class="">
+                         <a href="searchResult.php?category=Posh"  target="_blank">
                        <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/poshgirl.png" class="ultraRelax" alt="">
@@ -180,7 +180,7 @@
                         </div> 
                          </a>
 
-                         <a href="#" class="MobCatLoard">
+                         <a href="searchResult.php?category=Black and white" class="MobCatLoard" target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/blackAndWhite.png" class="ultraRelax" alt="">
@@ -189,7 +189,7 @@
                         </div>    
                          </a>  
 
-                         <a href="#" class="MobCatLoard">
+                         <a href="searchResult.php?category=Blur" class="MobCatLoard" target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/nocloth.png" class="ultraRelax" alt="">
@@ -198,7 +198,7 @@
                         </div>
                         </a>
 
-                        <a href="#" class="MobCatLoard">        
+                        <a href="searchResult.php?category=Ultra Relax"  class="MobCatLoard" target="_blank">        
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/ultraRelaxx.png" class="ultraRelax" alt="">
@@ -207,7 +207,7 @@
                         </div>
                         </a>
 
-                         <a href="#" class="MobCatLoard">
+                         <a href="searchResult.php?category=Vehicle lovers"  class="MobCatLoard" target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/vehicle.png" class="ultraRelax" alt="">
@@ -216,7 +216,7 @@
                         </div> 
                          </a>
 
-                         <a href="#" class="MobCatLoard">
+                         <a href="searchResult.php?category=Super dancer"  class="MobCatLoard" target="_blank">
                           <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/supperDancer.png" class="ultraRelax" alt="">
@@ -227,7 +227,7 @@
 
 
 
-                         <a href="#" class="MobCatLoard">
+                         <a href="searchResult.php?category=Movie"  class="MobCatLoard" target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/MoveGirl.png" class="ultraRelax" alt="">
@@ -238,7 +238,7 @@
                          
 
 
-                         <a href="#" class="MobCatLoard">
+                         <a href="searchResult.php?category=Chill"  class="MobCatLoard" target="_blank">
                         <div class="ststusBox">
                         <div class="ball">
                             <img src="img/main/chill1.jpg" class="chill" alt="">

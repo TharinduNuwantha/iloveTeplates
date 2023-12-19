@@ -1,7 +1,7 @@
 <?php
     require_once('inc/connection.php');
     sleep(2);
-    if($_POST['buttonType']){
+    if($_POST['buttonType'] == 'shh'){
                 $lodMorShCont = $_POST['lodMorShCont'];
                 $currentDisSh = $_POST['currentDisSh'];
                 $type = $_POST['buttonType'];
@@ -38,6 +38,8 @@
                     echo "noMorData";
                 }
     
+    }else if($_POST['buttonType'] == 'shh'){
+
     }
 
 

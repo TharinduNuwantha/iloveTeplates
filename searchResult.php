@@ -19,6 +19,60 @@
     }
 }
 
+if (isset($_GET['category'])) {
+    $type_cat = '';
+    switch ($_GET['category']) {
+        case 'Travel':
+            $type_cat = 'Travel';
+            break;
+        case 'Better Life':
+            $type_cat = 'Better Life';
+            break;
+        case 'Wedding':
+            $type_cat = 'Wedding'; 
+            break;  
+        case 'Photo Collage':
+            $type_cat = 'Photo Collage'; 
+            break;   
+        case 'Add Text':
+            $type_cat = 'Add Text';
+            break;
+        case 'Toon me':
+            $type_cat = 'Toon me';  
+            break;
+        case 'Love you':
+            $type_cat = 'Love you';   
+            break;  
+        case 'Beauty':
+            $type_cat = 'Beauty';
+            break;
+        case 'Posh':
+            $type_cat = 'Posh';
+            break;
+        case 'Black and white':
+            $type_cat = 'Black and white';
+            break;
+        case 'Blur':
+            $type_cat = 'Blur';    
+            break; 
+        case 'Ultra Relax';
+            $type_cat = 'Ultra Relax'; 
+            break;   
+        case 'Vehicle lovers':
+            $type_cat = 'Vehicle lovers';
+            break;
+        case 'Super dancer':
+            $type_cat = 'Super dancer';
+            break;
+        case 'Movie':
+            $type_cat = 'Movie';
+            break;
+        case 'Chill':
+            $type_cat = 'Chill';
+            break;
+    }
+}
+
 ?>
 
 
@@ -105,7 +159,13 @@
             
             <div class="body-contaner">
                 
-                <div class="shhRsFor"><p>Search results for : <?php echo ($type == 'fixed') ?  'Top': $type?></p></div> 
+                <div class="shhRsFor"><p>Search results for : <?php 
+                    if(isset($_GET['shh'])){
+                        echo ($type == 'fixed') ?  'Top': $type;
+                    }else if($_GET['category']){
+                        echo $type_cat;
+                    }
+                ?></p></div> 
                                
             <div class="line"></div>
             <div class="videoCenter">
@@ -113,7 +173,7 @@
                 <div class="border" id="border_sh">
                 <?php
 
-                  
+                  if(isset($_GET['shh'])){
                         $sql = "SELECT * FROM main WHERE type = '{$type}' ORDER BY updated_date DESC LIMIT 11";
                         $result_set_main = mysqli_query($conn, $sql);
     
@@ -139,8 +199,35 @@
                                 echo $box;
                             }
                         }
-                    
+                  }
 
+                  if(isset($_GET['category'])){
+                    $sql = "SELECT * FROM main WHERE keywords LIKE '%{$type_cat}%' ORDER BY updated_date DESC LIMIT 11";
+                    $result_set_main = mysqli_query($conn, $sql);
+
+                    if ($result_set_main) {
+                        if (mysqli_num_rows($result_set_main) > 0) {
+                            $box = "";
+                            while ($itm = mysqli_fetch_assoc($result_set_main)) {
+                                $sql_thumbnail = "SELECT thumbnail_link FROM thumbnail WHERE id = '{$itm['thumbnail_id']}'";
+                                $result_set_thumbnail = mysqli_query($conn, $sql_thumbnail);
+
+                                if ($result_set_thumbnail) {
+                                    if (mysqli_num_rows($result_set_thumbnail) > 0) {
+                                        $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
+                                        $box .= '<div class="box">';
+                                        $box .= '<a href="#">';
+                                        $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
+                                        $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
+                                        $box .= '</a>';
+                                        $box .= '</div>';
+                                    }
+                                }
+                            }
+                            echo $box;
+                        }
+                    }
+                  }
                     ?>
 
         
@@ -148,7 +235,13 @@
         </div>
         </div>
         </div>
-             <input type="hidden" name="getType" id="getType" value="<?php echo $type?>">   
+             <input type="hidden" name="getType" id="getType" value="<?php 
+             if(isset($_GET['shh'])){
+                echo $type;
+             }else if(isset($_GET['category'])){
+                echo $type_cat;
+             }
+             ?>">   
                      
         <div class="button_box">
             <button class="ldMorBtn" id="ldMorBtn_sh">Load more</button> 
