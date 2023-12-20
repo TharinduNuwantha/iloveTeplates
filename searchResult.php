@@ -236,18 +236,31 @@ if (isset($_GET['category'])) {
         </div>
         </div>
              <input type="hidden" name="getType" id="getType" value="<?php 
+             $shType = '';
              if(isset($_GET['shh'])){
                 echo $type;
+                $shType = 'shh';
              }else if(isset($_GET['category'])){
                 echo $type_cat;
+                $shType = 'category';
              }
              ?>">   
-                     
+
+            <input type="hidden" name="getType" id="getTypeSh" value="<?php 
+             $shType = '';
+             if(isset($_GET['shh'])){
+                echo 'shh';
+             }else if(isset($_GET['category'])){
+                echo 'category';
+             }
+             ?>">   
+                    
         <div class="button_box">
             <button class="ldMorBtn" id="ldMorBtn_sh">Load more</button> 
             <button class="ldLddBtn hide" id="loading_sh"><img src="img/main/loading.gif" width="15px" alt=""></button>
             <a href="" target="_blank"><button class="ldAll hide" id="ldAll_sh">No more data</button></a>
         </div>
+
 
 <br>
         <footer>
@@ -374,8 +387,10 @@ if (isset($_GET['category'])) {
             $(document).ready(function(){
                 currentDisSh += 7;
             // alert(currentDisTrnd);
+          //  alert(document.getElementById("getType").value);
                 var postData = {
                     buttonType:document.getElementById("getType").value,
+                    btnType:document.getElementById("getTypeSh").value,
                     lodMorShCont: lodMorShCont,
                     currentDisSh: currentDisSh
                 };
