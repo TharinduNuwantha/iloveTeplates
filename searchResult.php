@@ -73,6 +73,10 @@ if (isset($_GET['category'])) {
     }
 }
 
+if(isset($_GET['SearchResult'])){
+    $SearchResult = $_GET['SearchResult'];
+}
+
 ?>
 
 
@@ -93,7 +97,7 @@ if (isset($_GET['category'])) {
         <nav>
            <div class="navBar"> 
             <div class="logo">
-                I <img src="img/main/hart2.png" alt="hart" width="28px"> <a href="index.html" style="text-decoration: none;">Template.com</a>
+                I <img src="img/main/hart2.png" alt="hart" width="28px"> <a href="index.php" style="text-decoration: none;">Template.com</a>
             </div>
             <div class="links">
                 <ul>
@@ -140,7 +144,7 @@ if (isset($_GET['category'])) {
                 <div class="searchBox">
                     <form id="sharchForm"></form>
                     <input type="text" id="searchBox" class="searchBox" placeholder="Search templates...">
-                    <button>Search</button>
+                    <button id="mainSearchBox">Search</button>
                 </div>
                 <div class="spase1"></div>
                 <div class="sh_reslt_cover">
@@ -162,8 +166,10 @@ if (isset($_GET['category'])) {
                 <div class="shhRsFor"><p>Search results for : <?php 
                     if(isset($_GET['shh'])){
                         echo ($type == 'fixed') ?  'Top': $type;
-                    }else if($_GET['category']){
+                    }else if(isset($_GET['category'])){
                         echo $type_cat;
+                    }else if(isset($_GET['SearchResult'])){
+                        echo $SearchResult;
                     }
                 ?></p></div> 
                                
@@ -228,6 +234,35 @@ if (isset($_GET['category'])) {
                         }
                     }
                   }
+
+                  if(isset($_GET['SearchResult'])){
+
+                    $sql = "SELECT * FROM main WHERE template_name LIKE '%{$SearchResult}%' ORDER BY updated_date DESC LIMIT 25";
+                    $result_set_main = mysqli_query($conn, $sql);
+
+                    if ($result_set_main) {
+                        if (mysqli_num_rows($result_set_main) > 0) {
+                            $box = "";
+                            while ($itm = mysqli_fetch_assoc($result_set_main)) {
+                                $sql_thumbnail = "SELECT thumbnail_link FROM thumbnail WHERE id = '{$itm['thumbnail_id']}'";
+                                $result_set_thumbnail = mysqli_query($conn, $sql_thumbnail);
+
+                                if ($result_set_thumbnail) {
+                                    if (mysqli_num_rows($result_set_thumbnail) > 0) {
+                                        $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
+                                        $box .= '<div class="box">';
+                                        $box .= '<a href="#">';
+                                        $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
+                                        $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
+                                        $box .= '</a>';
+                                        $box .= '</div>';
+                                    }
+                                }
+                            }
+                            echo $box;
+                        }
+                    }
+                  }
                     ?>
 
         
@@ -243,6 +278,9 @@ if (isset($_GET['category'])) {
              }else if(isset($_GET['category'])){
                 echo $type_cat;
                 $shType = 'category';
+             }else if(isset($_GET['SearchResult'])){
+                echo $SearchResult;
+                $shType = 'SearchResult';
              }
              ?>">   
 
@@ -252,6 +290,8 @@ if (isset($_GET['category'])) {
                 echo 'shh';
              }else if(isset($_GET['category'])){
                 echo 'category';
+             }else if(isset($_GET['SearchResult'])){
+                echo 'SearchResult';
              }
              ?>">   
                     
@@ -290,13 +330,23 @@ if (isset($_GET['category'])) {
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" integrity="sha512-jNDtFf7qgU0eH/+Z42FG4fw3w7DM/9zbgNPe3wfJlCylVDTT3IgKW5r92Vy9IHa6U50vyMz5gRByIu4YIXFtaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="functions.js"></script>
     <script>
-
+       // alert(document.getElementById("getType").value);
+       //alert(document.getElementById("getTypeSh").value);
             // ================== laze loard ==================
                 $(function(){
                     $('img.lazy').lazyload({
                         effect: "fadeIn"
                     });
                 });
+
+
+                // ================== Search box to searchResult.php start ===================
+                        document.getElementById("mainSearchBox").addEventListener("click",function(){
+                        var searchBoxVal = document.getElementById("searchBox").value; 
+                        window.location.href = "searchResult.php?SearchResult=" + searchBoxVal;
+                    });
+                    // ================== Search box to searchResult.php end ===================== 
+                
             // ================== laze loard ==================
 
             const triger = document.getElementById("searchBox");
@@ -304,7 +354,7 @@ if (isset($_GET['category'])) {
             // user autofocus  input box
             triger.addEventListener("blur",function(){
                 const ul =document.getElementById("shList");
-                ul.innerHTML = '';
+             //   ul.innerHTML = '';
             });
 
             triger.addEventListener("keyup",function(){
@@ -346,7 +396,7 @@ if (isset($_GET['category'])) {
                           //  alert(searchQuery);
                             var listItems = ``;
                             for(let i =0;i<searchQuery.length;i++){
-                                listItems += `<a href=""><li>`+searchQuery[i]+`</li></a>`
+                                listItems += `<a href="searchResult.php?SearchResult=`+searchQuery[i]+`"  id="searchRsPross"><li>`+searchQuery[i]+`</li></a>`;
                             }
                             ul.innerHTML = listItems;
                                 

@@ -64,9 +64,9 @@
                     <p class="title2">Explore CapCut's Vast Template Library, Thousands of Free Trending Templates Await You! Easily Create Stunning Videos and Images</p>
                 </div>
                 <div class="searchBox">
-                    <form id="sharchForm"></form>
+                    <form id="sharchForm" action="searchResult.php"></form>
                     <input type="text" id="searchBox" class="searchBox" placeholder="Search templates...">
-                    <button>Search</button>
+                    <button id="mainSearchBox">Search</button>
                 </div>
                 <div class="spase1"></div>
                 <div class="sh_reslt_cover">
@@ -386,7 +386,7 @@
         <div class="button_box">
             <button class="ldMorBtn" id="ldMorBtn_trnd">Load more</button> 
             <button class="ldLddBtn hide" id="ldLddBtn"><img src="img/main/loading.gif" width="15px" alt=""></button>
-            <a href="searchResult.php?shh=trending" target="_blank"><button class="ldAll hide" id="ldAll">Load All</button></a>
+            <a href="searchResult.php?shh=trending"  target="_blank"><button class="ldAll hide" id="ldAll">Load All</button></a>
         </div>
 
                 <!-- ============== GOOGLE ADDVATESMENT BAR ===============-->
@@ -534,7 +534,7 @@
                        
                     </div>
                     </a>
-        
+    
                 </div>
         </div>
         </div>
@@ -544,7 +544,7 @@
             <button class="ldLddBtn hide" id="loading_pc"><img src="img/main/loading.gif" width="15px" alt=""></button>
             <a href="searchResult.php?shh=Photo_Collaps" target="_blank"><button class="ldAll hide" id="ldAll_pc">Load All</button></a>
         </div>
-
+                    
         <!-- =================== video Tree END =================== -->
         <!-- =================== video Tree END =================== -->
 <br><br>
@@ -571,6 +571,7 @@
             <p class="cpyright" id="cpyright">&copy;</p>
         </div>
     </div><!--contaner-->
+    
     <script>
         
     </script>
@@ -578,8 +579,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" integrity="sha512-jNDtFf7qgU0eH/+Z42FG4fw3w7DM/9zbgNPe3wfJlCylVDTT3IgKW5r92Vy9IHa6U50vyMz5gRByIu4YIXFtaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="functions.js"></script>
     <script>
-document.getElementById('searchBox').value = 'pakaya';
+            
 
+                    
                     // ====================== lazy loard function ===================
 
                     $(function(){
@@ -587,6 +589,14 @@ document.getElementById('searchBox').value = 'pakaya';
 				            effect: "fadeIn"
 			            });
 		            });
+
+
+                    // ================== Search box to searchResult.php start ===================
+                    document.getElementById("mainSearchBox").addEventListener("click",function(){
+                        var searchBoxVal = document.getElementById("searchBox").value; 
+                        window.location.href = "searchResult.php?SearchResult=" + searchBoxVal;
+                    });
+                    // ================== Search box to searchResult.php end =====================
 
                     const loardMorCat_mobile = document.getElementById('lsMorCat');
                     const lsMorCat_anime = document.getElementById('lsMorCat_anime');
@@ -627,7 +637,7 @@ document.getElementById('searchBox').value = 'pakaya';
             // user autofocus  input box
             triger.addEventListener("blur",function(){
                 const ul =document.getElementById("shList");
-                ul.innerHTML = '';
+              //  ul.innerHTML = '';
             });
 
             triger.addEventListener("keyup",function(){
@@ -670,12 +680,14 @@ document.getElementById('searchBox').value = 'pakaya';
                             var listItems = ``;
                             
                             for(let i =0;i<searchQuery.length;i++){
-                                listItems += `<a href="searchResult.php?SearchResult=`+searchQuery[i]+`"><li>`+searchQuery[i]+`</li></a>`;
-                                
+                                 listItems += `<a href="searchResult.php?SearchResult=`+searchQuery[i]+`"  id="searchRsPross"><li>`+searchQuery[i]+`</li></a>`;
+                   
                             }
-                            ul.innerHTML = listItems;
+                            ul.innerHTML = listItems;   
                                 
-
+                            document.getElementById("searchRsPross").addEventListener("click",function(){
+                                alert(888);
+                               });
                             }else{
                                 console.error('Error uploading file');
                                 console.log(xhr.responseText);
