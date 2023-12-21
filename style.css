@@ -251,7 +251,32 @@ nav .links ul li a:hover{
 /*-------------- Blinking LED START-----------------------*/
 
 /*-------------- Blinking LED END-----------------------*/
+.bannerArea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    height: 100px;
+    /* background-image: url("img/main/bannerMain.png"); */
+    background-size: cover;
+    background-position: center;
+    
+}
+.bannerArea .bannerContent{
+    color: white;
+    text-align: center;
+    background-color: rgb(17, 17, 17);
+    width: 85%;
+    padding: 15px 0;
+    border-radius: 35px
+}
+.bannerArea .bannerContent .banImags{
 
+}
+.bannerArea .bannerContent h2{
+
+}
 /*--------------- Body contaner Start------------------------*/
 
 .body{
@@ -728,8 +753,27 @@ transition: all 0.5s ease-in-out;
     width: 100px;
     border-radius: 50%; /* This will make the div and its content (image) round */
     overflow: hidden;
-    border: 2px solid rgb(255, 13, 69);    
+    border: 5px solid rgb(255, 13, 69);    
     /* background-color: rgb(250, 30, 111); */
+    animation: liveUpdater 1s infinite linear;
+}
+@keyframes liveUpdater{
+    0%{
+        border: 2px solid rgb(255, 13, 69);   
+    }
+    25%{
+        border: 2px solid rgb(255, 120, 17); 
+          
+    }
+    50%{
+        border: 2px solid rgb(231, 14, 255);
+    }
+    75%{
+        border: 2px solid rgb(253, 0, 156);
+    }
+    100%{
+        border: 2px solid rgb(255, 13, 69);   
+    }
 }
 .bollCover .ball:hover{
     border: 2px solid rgb(255, 169, 21); 
@@ -784,6 +828,28 @@ transition: all 0.5s ease-in-out;
     padding: 15px  5px 5px 5px;
     font-size: 20px;
 }
+
+.bannerContent {
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    animation: BannerClr 12s ease-in-out infinite;
+}
+
+@keyframes BannerClr {
+    0% {
+        background-position: 100% 50%;
+        background-size: 300% 300%; /* Adjust the size based on your needs */
+    }
+    50% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 
 @media screen and (max-width: 710px) {
     .box img {

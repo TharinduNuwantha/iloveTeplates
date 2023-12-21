@@ -61,6 +61,7 @@
             <div class="boxSerch" id="boxSerch">
                 <div class="shBoxText">
                     <p class="title1" id="i">I Love Template.com</p>
+                    
                     <p class="title2">Explore CapCut's Vast Template Library, Thousands of Free Trending Templates Await You! Easily Create Stunning Videos and Images</p>
                 </div>
                 <div class="searchBox">
@@ -78,6 +79,14 @@
                 </div>
             </div>
             
+        </div>
+
+        <div class="bannerArea">
+            <div class="bannerContent">
+                <div class="banImags">
+                                    </div>
+                <h2>The #1 CapCut Template Collection</h2>
+            </div>
         </div>
 
         <!-- ============== GOOGLE ADDVATESMENT BAR ===============-->
@@ -281,7 +290,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="#">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -350,7 +359,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -430,7 +439,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="#">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -506,7 +515,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="#">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
