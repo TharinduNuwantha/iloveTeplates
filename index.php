@@ -282,7 +282,7 @@
                     if ($result_set_main) {
                         if (mysqli_num_rows($result_set_main) > 0) {
                             $box = "";
-                            while ($itm = mysqli_fetch_assoc($result_set_main)) {
+                            while ($itm = mysqli_fetch_assoc($result_set_main)) {   
                                 $sql_thumbnail = "SELECT thumbnail_link FROM thumbnail WHERE id = '{$itm['thumbnail_id']}'";
                                 $result_set_thumbnail = mysqli_query($conn, $sql_thumbnail);
 
@@ -290,7 +290,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -359,7 +359,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -439,7 +439,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -515,7 +515,7 @@
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="_blank">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
