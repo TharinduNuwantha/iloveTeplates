@@ -37,7 +37,6 @@
            }
         }
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +51,7 @@
         <nav>
            <div class="navBar"> 
             <div class="logo">
-                I <img src="img/main/hart2.png" alt="hart" width="28px"> <a href="index.html" style="text-decoration: none;">Template.com</a>
+                I <img src="img/main/hart2.png" alt="hart" width="28px"> <a href="index.php" style="text-decoration: none;">Template.com</a>
             </div>
             <div class="links">
                 <ul>
@@ -171,6 +170,7 @@
                             echo $box;
                         }
                     }
+                    
                     ?>  
 
 
@@ -183,12 +183,12 @@
         <div class="button_box">
             <button class="ldMorBtn" id="ldMorBtn_View">Load more</button> 
             <button class="ldLddBtn hide" id="loading_View"><img src="img/main/loading.gif" width="15px" alt=""></button>
-            <a href="searchResult.php?shh=View" target="_blank"><button class="ldAll hide" id="ldAll_View">Load All</button></a>
+            <button class="ldAll hide" id="ldAll_View">Load All</button>
         </div>
 
 
-
-
+          <input type="hidden" name="keywords" id="keywords" value="<?php echo $keyWords; ?>">          
+<br>
         <footer>
             <div class="footerline1">
                 <div class="fotterlogo">    
@@ -250,6 +250,7 @@ ldMorBtn_View.addEventListener("click",function(){
             // alert(currentDisTrnd);
                 var postData = {
                     buttonType:'viewPhp',
+                    keyWords:document.getElementById('keywords').value,
                     lodMorViewCont: lodMorViewCont,
                     currentDisView: currentDisView
                 };

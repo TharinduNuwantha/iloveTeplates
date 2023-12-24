@@ -168,9 +168,9 @@ if($_POST['buttonType'] == 'top'){
 if($_POST['buttonType'] == 'viewPhp'){
     $lodMorViewCont = $_POST['lodMorViewCont'];
     $currentDisView = $_POST['currentDisView'];
-    // $type_cat = $_POST['buttonType'];
+    $keyWords = $_POST['keyWords'];
     $masterBoxes = array();
-    $sql = "SELECT * FROM Main WHERE keywords LIKE '%t%' ORDER BY updated_date DESC";
+    $sql = "SELECT * FROM Main WHERE keywords LIKE '%{$keyWords}%' ORDER BY updated_date DESC LIMIT {$currentDisView}, {$lodMorViewCont}";
     $result_set_main = mysqli_query($conn, $sql);  // Rename to $result_set_main
     if($result_set_main){
         if(mysqli_num_rows($result_set_main) > 0){

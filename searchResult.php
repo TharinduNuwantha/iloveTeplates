@@ -339,7 +339,6 @@ if(isset($_GET['SearchResult'])){
                     });
                 });
 
-
                 // ================== Search box to searchResult.php start ===================
                         document.getElementById("mainSearchBox").addEventListener("click",function(){
                         var searchBoxVal = document.getElementById("searchBox").value; 
@@ -414,9 +413,7 @@ if(isset($_GET['SearchResult'])){
 
                         }
 
-                        // You can update the UI or perform additional actions here
 
-                        // For example, show the reload button after the upload is complete
                     
                     }
                 };
