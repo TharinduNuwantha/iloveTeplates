@@ -294,6 +294,8 @@
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
+                                        $box .= '</a>';
+                                        $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                         $box .= '</div>';
                                     }
                                 }
@@ -313,12 +315,12 @@
                     </div> -->
                     <a href="#">
                     <div class="box">
-                        <div class="img"><img src="img/uploads/more.png" alt=""></div>
+                        <div class="img"><img class="lazy" data-original="img/moretemplates2.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>
                        
                     </div>
                     </a>
-        
+                    
                 </div>
         </div>
         </div>
@@ -331,7 +333,6 @@
 
         <!-- =============================== TOP 10 Set END ==================================== -->
         <!-- =============================== TOP 10 Set END ==================================== -->
-
 
 
 
@@ -363,6 +364,7 @@
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
+                                        $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                         $box .= '</div>';
                                     }
                                 }
@@ -373,6 +375,7 @@
                     ?>
 
                 <!-- Vlog -->
+                
 
 <!--         
                     <div class="box">
@@ -382,7 +385,7 @@
                     </div> -->
                     <a href="#">
                     <div class="box">
-                        <div class="img"><img src="img/uploads/more.png" alt=""></div>
+                        <div class="img"><img class="lazy" data-original="img/moretemplates2.png"="img/uploads/more.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>
                        
                     </div>
@@ -443,6 +446,7 @@
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
+                                        $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                         $box .= '</div>';
                                     }
                                 }
@@ -462,7 +466,7 @@
                     </div> -->
                     <a href="#">
                     <div class="box">
-                        <div class="img"><img src="img/uploads/more.png" alt=""></div>
+                        <div class="img"><img class="lazy" data-original="img/moretemplates2.png"="img/uploads/more.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>
                        
                     </div>
@@ -490,6 +494,10 @@
 
         <!-- =================== video Tree =================== -->
         <!-- =================== video Tree =================== -->
+
+
+
+
 
         <div class="body">
             
@@ -519,6 +527,7 @@
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
+                                        $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                         $box .= '</div>';
                                     }
                                 }
@@ -538,7 +547,7 @@
                     </div> -->
                     <a href="#">
                     <div class="box">
-                        <div class="img"><img src="img/uploads/more.png" alt=""></div>
+                        <div class="img"><img class="lazy" data-original="img/moretemplates2.png"="img/uploads/more.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>
                        
                     </div>
@@ -557,6 +566,32 @@
         <!-- =================== video Tree END =================== -->
         <!-- =================== video Tree END =================== -->
 <br><br>
+        <!-- ================================= poppup window ========================= -->
+        <!-- ================================= poppup window ========================= -->
+        
+        <div class="popup hide" id="popup"> 
+    <section class="sction">
+      <!-- <button class="show-modal">Show Modal</button> -->
+      <span class="overlay"></span>
+
+      <div class="modal-box">
+        <div class="loadingBvid hide">
+              <div class="loadingio-spinner-rolling-uyvf2saziu"><div class="ldio-fyd9fkzjpy6">
+              <div></div>
+              </div></div>
+        
+        </div>
+        <div class="videoBox hide"></div>
+        <!-- <iframe src="https://jumpshare.com/embed/VPqLyBu9VV19aFqybqDi" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="auto" height="402px"></iframe> -->
+        <div class="buttons">
+            <a href="" target="_blank"><button id="mnPnlBtn">Use Template on Capcut</button></a>
+            <button class="close-btn">Close</button>
+        </div>
+      
+    </section>
+</div>
+<!-- ================================= poppup window ========================= -->
+<!-- ================================= poppup window ========================= -->
         <footer>
             <div class="footerline1">
                 <div class="fotterlogo">    

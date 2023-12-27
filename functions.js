@@ -76,7 +76,7 @@ ldMorBtn_trnd.addEventListener("click", function () {
                     console.log(element);
                     var newBox = document.createElement("div");
                     newBox.className = "box";
-                    newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a>';
+                    newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
                     boxCover.appendChild(newBox);
                 });
 
@@ -149,7 +149,7 @@ ldMorBtn_vlg.addEventListener("click",function(){
                             console.log(element);
                             var newBox = document.createElement("div");
                             newBox.className = "box";
-                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a>';
+                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
                             boxCover.appendChild(newBox);
                         });
 
@@ -292,7 +292,7 @@ ldMorBtn_top.addEventListener("click",function(){
                             console.log(element);
                             var newBox = document.createElement("div");
                             newBox.className = "box";
-                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a>';
+                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
                             boxCover.appendChild(newBox);
                         });
 
@@ -324,3 +324,82 @@ ldMorBtn_top.addEventListener("click",function(){
 // ============================================================
 // ============================================================
 
+
+// ==========================================================
+// ==========================================================
+// ==========================================================
+
+// -------------------------- popup box video Start -------------------
+// -------------------------- popup box video Start -------------------
+
+
+
+function popUpWind(event){
+    const popup = document.querySelector(".popup");
+    popup.classList.remove("hide");    
+    const section = document.querySelector("section"),
+    overlay = document.querySelector(".overlay"),
+    showBtn = document.querySelector(".show-modal"),
+    closeBtn = document.querySelector(".close-btn");
+    const modal_box = document.querySelector(".modal-box");
+    const loadingBvid = document.querySelector(".loadingBvid");
+    const videoBox = document.querySelector(".videoBox");
+    var boxElement = document.querySelector('.modal-box');
+    var distanceToTop = Math.round(boxElement.getBoundingClientRect().top + window.scrollY);
+    if(distanceToTop > 1800){
+            // alert('Distance from box to window top: ' + distanceToTop + ' pixels');
+            // modal_box.style.position = "fixed";
+            // modal_box.style.top = "40%";
+    }
+    // alert('Distance from box to window top: ' + distanceToTop + ' pixels');
+    console.log('Distance from box to window top: ' + distanceToTop + ' pixels');
+    section.classList.add("active");
+
+
+
+
+    setTimeout(function(){
+
+        loadingBvid.style.display = 'none';
+        document.querySelector(".videoBox").classList.remove("hide");
+        setTimeout(function(){  
+            document.querySelector(".videoBox").style.animation = "none";
+        },2000)
+        videoBox.innerHTML = '<iframe src="'+event+'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="100%" height="402px"></iframe>';
+    },1000);
+
+    overlay.addEventListener("click", () =>
+    section.classList.remove("active")
+    );
+
+
+    closeBtn.addEventListener("click", function(){
+      
+        section.classList.remove("active");
+        videoBox.innerHTML = '';
+        loadingBvid.classList.remove = 'hide';
+        document.querySelector(".videoBox").style.animation = "";
+        // document.querySelector(".videoBox").classList.add("hide");
+        // loadingBvid.innerHTML = '';  
+        const popup = document.querySelector(".popup");
+        popup.classList.add('hide');
+    });
+
+}
+
+
+
+// showBtn.addEventListener("click", () => section.classList.add("active"));
+
+// overlay.addEventListener("click", () =>
+// section.classList.remove("active")
+// );
+
+// closeBtn.addEventListener("click", () =>
+// section.classList.remove("active")
+// );
+// -------------------------- popup box video End-------------------
+// -------------------------- popup box video End-------------------
+
+// =======================================================================
+// =======================================================================

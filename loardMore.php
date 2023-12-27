@@ -23,6 +23,7 @@
                                     $boxKit['boxId'] = $box['id'];
                                     $boxKit['template_name'] = $box['template_name'];
                                     $boxKit['thumbnail_link'] = $thm['thumbnail_link'];
+                                    $boxKit['video_link'] = $box['video_link'];
                                     $masterBoxes[] = $boxKit;
                                 }
                             }
@@ -63,6 +64,7 @@
                             $boxKit['boxId'] = $box['id'];
                             $boxKit['template_name'] = $box['template_name'];
                             $boxKit['thumbnail_link'] = $thm['thumbnail_link'];
+                            $boxKit['video_link'] = $box['video_link'];
                             $masterBoxes[] = $boxKit;
                         }
                     }
@@ -105,6 +107,7 @@ if($_POST['buttonType'] == 'Phot_Collaps'){
                         $boxKit['boxId'] = $box['id'];
                         $boxKit['template_name'] = $box['template_name'];
                         $boxKit['thumbnail_link'] = $thm['thumbnail_link'];
+                        $boxKit['video_link'] = $box['video_link'];
                         $masterBoxes[] = $boxKit;
                     }
                 }
@@ -147,6 +150,7 @@ if($_POST['buttonType'] == 'top'){
                         $boxKit['boxId'] = $box['id'];
                         $boxKit['template_name'] = $box['template_name'];
                         $boxKit['thumbnail_link'] = $thm['thumbnail_link'];
+                        $boxKit['video_link'] = $box['video_link'];
                         $masterBoxes[] = $boxKit;
                     }
                 }
@@ -187,6 +191,7 @@ if($_POST['buttonType'] == 'viewPhp'){
                         $boxKit['boxId'] = $box['id'];
                         $boxKit['template_name'] = $box['template_name'];
                         $boxKit['thumbnail_link'] = $thm['thumbnail_link'];
+                        $boxKit['video_link'] = $box['video_link'];
                         $masterBoxes[] = $boxKit;
                     }
                 }

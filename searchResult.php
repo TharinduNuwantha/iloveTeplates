@@ -412,8 +412,6 @@ if(isset($_GET['SearchResult'])){
                             // Handle errors
 
                         }
-
-
                     
                     }
                 };
