@@ -313,7 +313,7 @@
                         <div class="tmpName">capcut template new  download</div>
                        
                     </div> -->
-                    <a href="#">
+                    <a href="searchResult.php?shh=top" target="_blank">
                     <div class="box">
                         <div class="img"><img class="lazy" data-original="img/moretemplates2.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>
@@ -383,7 +383,7 @@
                         <div class="tmpName">capcut template new  download</div>
                        
                     </div> -->
-                    <a href="#">
+                    <a href="searchResult.php?shh=trending" target="_blank">
                     <div class="box">
                         <div class="img"><img class="lazy" data-original="img/moretemplates2.png"="img/uploads/more.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>
@@ -464,7 +464,7 @@
                         <div class="tmpName">capcut template new  download</div>
                        
                     </div> -->
-                    <a href="#">
+                    <a href="searchResult.php?shh=Vlog" target="_blank">
                     <div class="box">
                         <div class="img"><img class="lazy" data-original="img/moretemplates2.png"="img/uploads/more.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>
@@ -545,7 +545,7 @@
                         <div class="tmpName">capcut template new  download</div>
                        
                     </div> -->
-                    <a href="#">
+                    <a href="searchResult.php?shh=Photo_Collaps" target="_blank">
                     <div class="box">
                         <div class="img"><img class="lazy" data-original="img/moretemplates2.png"="img/uploads/more.png" alt=""></div>
                         <div class="tmpName">capcut template new trend tiktok download</div>

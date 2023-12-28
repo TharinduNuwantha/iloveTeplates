@@ -365,7 +365,7 @@ function popUpWind(event){
         setTimeout(function(){  
             document.querySelector(".videoBox").style.animation = "none";
         },2000)
-        videoBox.innerHTML = '<iframe src="'+event+'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="100%" height="402px"></iframe>';
+        videoBox.innerHTML = '<iframe src="'+event+'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="auto" height="402px"></iframe>';
     },1000);
 
     overlay.addEventListener("click", () =>

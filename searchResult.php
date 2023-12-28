@@ -198,6 +198,7 @@ if(isset($_GET['SearchResult'])){
                                             $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                             $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                             $box .= '</a>';
+                                            $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                             $box .= '</div>';
                                         }
                                     }
@@ -226,6 +227,7 @@ if(isset($_GET['SearchResult'])){
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
+                                        $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                         $box .= '</div>';
                                     }
                                 }
@@ -255,6 +257,7 @@ if(isset($_GET['SearchResult'])){
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
+                                        $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                         $box .= '</div>';
                                     }
                                 }
@@ -302,7 +305,33 @@ if(isset($_GET['SearchResult'])){
         </div>
 
 
-<br>
+<br><br>
+        <!-- ================================= poppup window ========================= -->
+        <!-- ================================= poppup window ========================= -->
+        
+        <div class="popup hide" id="popup"> 
+    <section class="sction">
+      <!-- <button class="show-modal">Show Modal</button> -->
+      <span class="overlay"></span>
+
+      <div class="modal-box">
+        <div class="loadingBvid hide">
+              <div class="loadingio-spinner-rolling-uyvf2saziu"><div class="ldio-fyd9fkzjpy6">
+              <div></div>
+              </div></div>
+        
+        </div>
+        <div class="videoBox hide"></div>
+        <!-- <iframe src="https://jumpshare.com/embed/VPqLyBu9VV19aFqybqDi" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="auto" height="402px"></iframe> -->
+        <div class="buttons">
+            <a href="" target="_blank"><button id="mnPnlBtn">Use Template on Capcut</button></a>
+            <button class="close-btn">Close</button>
+        </div>
+      
+    </section>
+</div>
+<!-- ================================= poppup window ========================= -->
+<!-- ================================= poppup window ========================= -->
         <footer>
             <div class="footerline1">
                 <div class="fotterlogo">    
@@ -460,7 +489,7 @@ if(isset($_GET['SearchResult'])){
                             console.log(element);
                             var newBox = document.createElement("div");
                             newBox.className = "box";
-                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a>';
+                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
                             boxCover.appendChild(newBox);
                         });
 
