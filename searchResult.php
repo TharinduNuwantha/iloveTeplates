@@ -489,7 +489,7 @@ if(isset($_GET['SearchResult'])){
                             console.log(element);
                             var newBox = document.createElement("div");
                             newBox.className = "box";
-                            newBox.innerHTML = '<a href="view.php?SearchResult=' + element['template_name'] + '&id=' + element['id'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
+                            newBox.innerHTML = '<a href="view.php?SearchResult=' + element['template_name'] + '&id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
                             boxCover.appendChild(newBox);
                         });
 

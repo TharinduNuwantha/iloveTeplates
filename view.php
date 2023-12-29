@@ -163,6 +163,7 @@
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
+                                        $box .= '<button class="videoPrevew" onclick="popUpWind(\'' . $itm['video_link'] . '\')">view video</button>';
                                         $box .= '</div>';
                                     }
                                 }
@@ -275,7 +276,7 @@ ldMorBtn_View.addEventListener("click",function(){
                             console.log(element);
                             var newBox = document.createElement("div");
                             newBox.className = "box";
-                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a>';
+                            newBox.innerHTML = '<a href="view.php?SearchResult=' + element['template_name'] + '&id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
                             boxCover.appendChild(newBox);
                         });
 
