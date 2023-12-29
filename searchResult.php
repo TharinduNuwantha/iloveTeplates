@@ -194,7 +194,7 @@ if(isset($_GET['SearchResult'])){
                                         if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                             $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                             $box .= '<div class="box">';
-                                            $box .= '<a href="#">';
+                                            $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="">';
                                             $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                             $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                             $box .= '</a>';
@@ -223,7 +223,7 @@ if(isset($_GET['SearchResult'])){
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="#">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -253,7 +253,7 @@ if(isset($_GET['SearchResult'])){
                                     if (mysqli_num_rows($result_set_thumbnail) > 0) {
                                         $thumbnail_link = mysqli_fetch_assoc($result_set_thumbnail);
                                         $box .= '<div class="box">';
-                                        $box .= '<a href="#">';
+                                        $box .= '<a href="view.php?SearchResult=' . $itm['template_name'] . '&id=' . $itm['id'] . '" target="">';
                                         $box .= '<div class="img"><img class="lazy" data-original="' . $thumbnail_link['thumbnail_link'] . '" alt=""></div>';
                                         $box .= '<div class="tmpName">' . $itm['template_name'] . '</div>';
                                         $box .= '</a>';
@@ -489,7 +489,7 @@ if(isset($_GET['SearchResult'])){
                             console.log(element);
                             var newBox = document.createElement("div");
                             newBox.className = "box";
-                            newBox.innerHTML = '<a href="searchResult.php?id=' + element['boxId'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
+                            newBox.innerHTML = '<a href="view.php?SearchResult=' + element['template_name'] + '&id=' + element['id'] + '"><div class="img"><img src="' + element['thumbnail_link'] + '" alt=""></div>' + '<div class="tmpName">' + element['template_name'] + '</div></a><button class="videoPrevew" onclick="popUpWind(\'' + element['video_link'] + '\')">view video</button></div>';
                             boxCover.appendChild(newBox);
                         });
 
