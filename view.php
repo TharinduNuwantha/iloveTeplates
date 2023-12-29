@@ -190,6 +190,32 @@
 
           <input type="hidden" name="keywords" id="keywords" value="<?php echo $keyWords; ?>">          
 <br>
+        <!-- ================================= poppup window ========================= -->
+        <!-- ================================= poppup window ========================= -->
+        
+        <div class="popup hide" id="popup"> 
+    <section class="sction">
+      <!-- <button class="show-modal">Show Modal</button> -->
+      <span class="overlay"></span>
+
+      <div class="modal-box">
+        <div class="loadingBvid hide">
+              <div class="loadingio-spinner-rolling-uyvf2saziu"><div class="ldio-fyd9fkzjpy6">
+              <div></div>
+              </div></div>
+        
+        </div>
+        <div class="videoBox hide"></div>
+        <!-- <iframe src="https://jumpshare.com/embed/VPqLyBu9VV19aFqybqDi" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen width="auto" height="402px"></iframe> -->
+        <div class="buttons">
+            <a href="" target="_blank"><button id="mnPnlBtn">Use Template on Capcut</button></a>
+            <button class="close-btn">Close</button>
+        </div>
+      
+    </section>
+</div>
+<!-- ================================= poppup window ========================= -->
+<!-- ================================= poppup window ========================= -->
         <footer>
             <div class="footerline1">
                 <div class="fotterlogo">    
